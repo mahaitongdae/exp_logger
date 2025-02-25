@@ -1,11 +1,18 @@
 import subprocess
 import datetime
+import os
 
 
 def log_git_details(log_file = "dacer.diff"):
     try:
         # Get the current timestamp
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        parent_dir = os.path.dirname(log_file)
+
+        # Check if parent directory exists, create it if not
+        if not os.path.exists(parent_dir):
+            os.makedirs(parent_dir)
 
         # Get the git status
         status_result = subprocess.run(["git", "status"], capture_output=True, text=True, check=True)
