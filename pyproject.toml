@@ -2,6 +2,9 @@
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools.packages.find]
+include = ["exp_logger", "exp_logger.*"]
+
 [project]
 name = "exp_logger"
 version = "0.0.0-dev0"
@@ -10,6 +13,8 @@ dependencies = [
     "tensorboardX",
     "pyyaml"
 ]
+
+
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [

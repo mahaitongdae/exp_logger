@@ -1,8 +1,8 @@
-from exp_logger.logger import Logger
-import exp_logger
+from src.logger import Logger
+import src
 import os
 
 if __name__ == '__main__':
-    logger = Logger(os.path.dirname(exp_logger.__file__),
+    logger = Logger(os.path.dirname(src.__file__),
                     args = {'algo': 'test',
                             'env_id': 'test-v1'})
